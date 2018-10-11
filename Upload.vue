@@ -147,6 +147,7 @@ export default {
             console.log("BeforeUpload");
             console.log(file);
             console.log(up);
+            _this.$emit("on-before", file);
           },
           ChunkUploaded: function(up, file, info) {
             console.log("ChunkUploaded");
@@ -181,6 +182,7 @@ export default {
             console.log(err);
             console.log("errTip =");
             console.log(errTip);
+            _this.$emit("on-error", err);
           },
           UploadComplete: function() {
             // 队列文件处理完毕后，处理相关的事情
